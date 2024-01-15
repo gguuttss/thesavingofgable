@@ -155,7 +155,7 @@ mod gabling {
 
         pub fn withdraw_proof(&mut self, supply_proof_receipt: NonFungibleBucket) -> Bucket {
             assert!(
-                self.process_stage != 1,
+                self.process_stage == 0,
                 "Can not withdraw anymore. The saving process is underway."
             );
 
