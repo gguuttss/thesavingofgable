@@ -15,7 +15,7 @@ If for some reason they decide they want to remove their Proof of Supply again, 
 **Third phase: saving, started by calling start_saving()**
 
 Through the use of the admin badge it is possible to call the claim_xrd() method, to get xrd into the liquidity_pool_vault again, and make sure total_pool > owner_liquidity.
-This allows for more lsu_withdraws. In the same transaction, the method save_next() should be called as often as possible, ensuring total_pool < owner_liquidity again, non-component-owned Proof of Supplies can not call withdraw_lsu() independently.
+This allows for more lsu_withdraws. In the same transaction, the method save_next() should be called as often as possible, ensuring total_pool < owner_liquidity again, so non-component-owned Proof of Supplies can not call withdraw_lsu() independently.
 The cycle of claim_xrd() and save_next() continues until we are satisfied with the amount of LSUs saved.
 
 
