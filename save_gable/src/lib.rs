@@ -172,7 +172,9 @@ mod gabling {
 
             self.proofs_kvs.remove(&data.kvs_placement);
             let to_move_id: NonFungibleLocalId = self.proofs_kvs.get(&(self.kvs_entries-1)).unwrap().clone();
-            //TYPING FROM MOBILE: Forgot to update NFT data, "kvs_placement" here. If not added this would lead to problems in withdrawal of moved id.
+            //TYPING FROM MOBILE: Forgot to update moved NFT data "kvs_placement" here. If not added this would lead to problems in withdrawal of moved id.
+            //adding this would require a bit of changes to the KVS structure as it now only stores NFTID of gable receipt, and not NFTID of the saving protocol receipt.
+            //changing KVS to a structure like KeyValueStore<i64, (NonFungibleLocalId, NonFungibleLocalId)> would do the job.
             self.proofs_kvs.remove(&(self.kvs_entries-1));
             self.proofs_kvs.insert(data.kvs_placement.clone(), to_move_id);
 
