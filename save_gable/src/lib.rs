@@ -172,6 +172,7 @@ mod gabling {
 
             self.proofs_kvs.remove(&data.kvs_placement);
             let to_move_id: NonFungibleLocalId = self.proofs_kvs.get(&(self.kvs_entries-1)).unwrap().clone();
+            //TYPING FROM MOBILE: Forgot to update NFT data, "kvs_placement" here. If not added this would lead to problems in withdrawal of moved id.
             self.proofs_kvs.remove(&(self.kvs_entries-1));
             self.proofs_kvs.insert(data.kvs_placement.clone(), to_move_id);
 
